@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import HiGuess from '../containers/hi_guess'
-import LoGuess from '../containers/lo_guess'
-import Pass from '../containers/pass'
-import PlayerOne from './player_one'
-import PlayerTwo from './player_two'
+import HiGuess from '../containers/hi_guess';
+import LoGuess from '../containers/lo_guess';
+import Pass from '../containers/pass';
+import PlayerOne from './player_one';
+import PlayerTwo from './player_two';
+import Points from './points';
 
 
 class PlayArea extends Component {
@@ -22,6 +23,7 @@ class PlayArea extends Component {
     if (this.props.gameInPlay == true && this.props.passButton == true){
       return (
         <div>
+          <Points />
           <HiGuess deckId={this.props.deckId} drawnCard={this.props.drawnCard}/>
           <LoGuess deckId={this.props.deckId} drawnCard={this.props.drawnCard}/>
           <Pass />
@@ -31,6 +33,7 @@ class PlayArea extends Component {
     else if (this.props.gameInPlay == true ){
       return (
         <div>
+          <Points />
           <HiGuess deckId={this.props.deckId} drawnCard={this.props.drawnCard}/>
           <LoGuess deckId={this.props.deckId} drawnCard={this.props.drawnCard}/>
         </div>
